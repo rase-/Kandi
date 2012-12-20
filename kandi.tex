@@ -18,13 +18,28 @@
 A.1 [Introductory and Survey],\\
 I.7.m [Document and text processing]}}
 
-\keywords{ulkoasu, tiivistelm�, l�hdeluettelo}
+\keywords{}
 
 \mytableofcontents
 
 \section{Johdanto}
+Ohjelmistoja tuotettaessa on tärkeää validoida ohjelmiston eri komponenttien toimivuus, niiden yhteensopivuus, sekä järjestelmän toimivuus kokonaisuudessaan. Testauksen rooli ohjelmistotuotantoprosessissa vie potentiaalisesti paljon resursseja verrattuna muuhun prosessissa vaadittuun työmäärään, mutta se myös torjuu tehokkaasti viallista koodia~\cite{}. Kattavien testien läsnäollessa voidaan myös huoletta lisätä uutta toiminnallisuutta, muokata vanhaa toiminnallisuutta, ja refaktoroida ohjelmakoodia, sillä epäonnistuvat testit indikoivat sitä, että jotain on rikottu näitä muutoksia tehtäessä, eikä koodin muokkaaminen näinollen tuo prosessiin yhtä paljon epävarmuutta ohjelmiston toimivuuden suhteen.
 
+\subsection{Testauksen tasot}
+Yksikkötesteillä huolehditaan siitä, että yksittäiset komponentit ohjelmistossa toimivat oikein. Näillä voidaan varmistaa olio-ohjelmointikielissä yksittäisten luokkien ja niiden metodien toimivuus. Vastaavia testejä voidaan kirjoittaa myös esimerkiksi funktionaalisiin ohjelmointikieliin, joissa yksikkötestit testaavat yksittäisten funktioiden toiminnallisuutta. Kattavien yksikkötestien läsnäollessa refaktorointi on helpompaa, sillä jokaisen muutoksen jälkeen voidaan ajaa yksikkötestit, ja saada välitöntä palautetta siitä toimiiko muutettu komponentti vieläki olennaisesti samalla tavalla.
 
+Integraatiotestit testaavat komponenttien toimivuutta kokonaisuutena. Integraatiotestejä voidaan kirjoittaa useilla yksikkötesteihin ominaisilla testikehyksillä, mutta niitä varten on myös suunniteltu monia omia ohjelmakehityksiä. Integraatioestit on usein toteutettu ihmismäistä käyttäytymistä imitoiviksi, esimerkiksi selainympäristössä suoritettaville ohjelmistoille on kehitetty erilaisia kirjastoja, joilla voidaan avata ohjelmisto selaimessa, ja navigoida sivulla aivan kuten ihminen. Toimivuus voidaan sitten validoida odotettujen näkymien ja HTTP statuskoodien perusteella.
+
+\subsection{Testikattavuus}
+Niin yksikkö- kuin integraatiotestien yhteydessä puhutaan usein testikattavuudesta. Testikattavuus on mitta siitä, miten hyvin käytettävät testit kattavat komponenttien tarjoaman toiminnallisuuden, tai koko järjestelmälle määritellyn toiminnallisuuden. Kattavuuden mittana tunnetuimmat ja yleisimmät ovat rivikattavuus, ja haarakattavuus.
+
+Rivikattavuus mittaa testattavasta komponetista testien käsittelemän ohjelmakoodin rivien määrän. Jos jonkin komponentin yksikkötestit suoritettaessa suorittavat jokaisen rivin komponentin ohjelmakoodista, on rivikattauus 100\%, ja pidetään komponentin testejä tämän metriikan nojalla kattavana.
+
+Haarakattavuus mittaa eri kontrollirakenteista syntyvien haarojen kattavuuden, eli se kertoo prosentuaalisesti sen määrän eri kontrollihaaroista, minkä ohjelmakoodin testit ovat suorittaneet testattavasta komponentista. Jos jokainen haara käsitellään testeissä, ovat testit haarakattavuuden nojalla kattavat. Useimmiten testikattavuuden mittana käytetään näiden kahden mitan unionia, sillä molemmat ovat yksinään hyvin puutteellisia.
+
+Rivi- ja haarakattavuuden lisäksi on olemassa muita mittoja testikattavuuden mittaamiseen, joista yksi on mutaatiokattavuus. Mutaatiokattavuudella pyritään semanttisempaan analyysin testien kattavuudesta. Mutaatioestauksen tavoite on saada selville kuinka kattavasti määritellyt testit löytävät ohjelmakoodiin indusoitavia pieniä muutoksia. Tässä tutkielmassa esitellään mutaatiotestaus, sen menetelmät, sovellukset ja heikkoudet.
+
+\section{}
 
 \section{Yhteenveto}
 
