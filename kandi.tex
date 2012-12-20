@@ -23,7 +23,7 @@ I.7.m [Document and text processing]}}
 \mytableofcontents
 
 \section{Johdanto}
-Ohjelmistoja tuotettaessa on tärkeää validoida ohjelmiston eri komponenttien toimivuus, niiden yhteensopivuus, sekä järjestelmän toimivuus kokonaisuudessaan. Testauksen rooli ohjelmistotuotantoprosessissa vie potentiaalisesti paljon resursseja verrattuna muuhun prosessissa vaadittuun työmäärään, mutta se myös torjuu tehokkaasti viallista koodia~\cite{}. Kattavien testien läsnäollessa voidaan myös huoletta lisätä uutta toiminnallisuutta, muokata vanhaa toiminnallisuutta, ja refaktoroida ohjelmakoodia, sillä epäonnistuvat testit indikoivat sitä, että jotain on rikottu näitä muutoksia tehtäessä, eikä koodin muokkaaminen näinollen tuo prosessiin yhtä paljon epävarmuutta ohjelmiston toimivuuden suhteen.
+Ohjelmistoja tuotettaessa on tärkeää validoida ohjelmiston eri komponenttien toimivuus, niiden yhteensopivuus, sekä järjestelmän toimivuus kokonaisuudessaan. Testauksen rooli ohjelmistotuotantoprosessissa vie potentiaalisesti paljon resursseja verrattuna muuhun prosessissa vaadittuun työmäärään, mutta se myös torjuu tehokkaasti viallista koodia~\cite{}. Vaikka testaus ei anna täysin objektiivista totuutta siitä toimiiko ohjelmisto kuten on odotettu, se kuitenkin kasvattaa sen luotettavuutta. Kattavien testien läsnäollessa voidaan myös huoletta lisätä uutta toiminnallisuutta, muokata vanhaa toiminnallisuutta, ja refaktoroida ohjelmakoodia, sillä epäonnistuvat testit indikoivat sitä, että jotain on rikottu näitä muutoksia tehtäessä, eikä koodin muokkaaminen näinollen tuo prosessiin yhtä paljon epävarmuutta ohjelmiston toimivuuden suhteen.
 
 \subsection{Testauksen tasot}
 Yksikkötesteillä huolehditaan siitä, että yksittäiset komponentit ohjelmistossa toimivat oikein. Näillä voidaan varmistaa olio-ohjelmointikielissä yksittäisten luokkien ja niiden metodien toimivuus. Vastaavia testejä voidaan kirjoittaa myös esimerkiksi funktionaalisiin ohjelmointikieliin, joissa yksikkötestit testaavat yksittäisten funktioiden toiminnallisuutta. Kattavien yksikkötestien läsnäollessa refaktorointi on helpompaa, sillä jokaisen muutoksen jälkeen voidaan ajaa yksikkötestit, ja saada välitöntä palautetta siitä toimiiko muutettu komponentti vieläki olennaisesti samalla tavalla.
@@ -39,14 +39,32 @@ Haarakattavuus mittaa eri kontrollirakenteista syntyvien haarojen kattavuuden, e
 
 Rivi- ja haarakattavuuden lisäksi on olemassa muita mittoja testikattavuuden mittaamiseen, joista yksi on mutaatiokattavuus. Mutaatiokattavuudella pyritään semanttisempaan analyysin testien kattavuudesta. Mutaatioestauksen tavoite on saada selville kuinka kattavasti määritellyt testit löytävät ohjelmakoodiin indusoitavia pieniä muutoksia. Tässä tutkielmassa esitellään mutaatiotestaus, sen menetelmät, sovellukset ja heikkoudet.
 
+\section{Mutaatiotestaus}
+
+
 \section{Mutaatiot}
 Mutaatiotestaus perustuu siihen, että ohjelmakoodiin indusoidaan mutaatoita, joita ohjelmalle määriteltyjen testien tulisi huomata. Mutaatio tarkoittaa perinnöllisyystieteessä muutosta geeniin jossa yksi geenin kemiallinen komponentti, nulkeotidi, on vaihtunut joksikin toiseksi, on deletoitu sekvenssistä, tai on insertoitu sekvenssiin. Ohjelmakoodiin indusoitavat mutaatiot on toteutettu samalla idealla: koodista voidaan esim. poistaa yksittäisiä rivejä, muuntaa operaattoreita tai metodikutsuja toisiksi, tai lisätä ylimääräistä koodia. Mahdollisia mutaatoita on siis erittäin suuri määrä, ja laskennallisista syistä niistä voidaan käyttää vain osajoukkoa. Tyypilliset mutaatiot tuodaan esille myöhemmin tässä kappaleessa.
 
 \subsection{Mutaatiot äärellisillä automaateilla}
-Mutaatiot on helppo määritellä äärellisille automaateille.
+Mutaatiot on helppo esittää äärellisillä automaateilla. Olkoon $\Sigma={0,1}$ aakkosto. Voimme nyt määritellä tälle aakkostolle useita eri äärellisiä automaatteja, jotka hyväksyvät vain jotkin tietyt merkkijonot joka koostuvat aakkosista $\sigma \in \Sigma$. Eräs tällainen automaatti löytyy kuvasta~\ref{fig:nfa}, jonka aloitustila on tila $a$ ja hyväksyvä tila on tila $e$. Määritellään nyt myös joukko mutaatioita $M$. Jokainen mutaatio $m\in M$ on kuvaus, joka korvaa jonkin olemassaolevan tilasiirtymän toisella, poistaa tilasiirtymän, tai lisää tilasiirtymän. Jokainen mutaatio $m$ on siis kuvaus aakkoston $\Sigma$ äärellisten automaattien joukolta itselleen, jossa tämä mutaatio tekee jonkn muutoksen annettuun äärelliseen automaattiin. 
 % Tähän määritellään jokin aakkosto, jokin joukko mutaatioita, ja jokin automaatti, sitten näytetään miten näitä mutaatioita käyttäen voidaan luoda n määärä mutatoituja automaatteja
 
+\subsection{Mutaatiot ohjelmointikielissä}
+
 \subsection{Tyypilliset mutaatiot}
+Kuten mainittu, mutaatioita on monia eri tyyppejä.
+
+\subsection{Mutaatiot eri ohjemointiparadigmoissa}
+
+\section{Sovellukset}
+
+\section{Heikkudet}
+\subsection{Aikavaativuus}
+\subsection{Ekvivalentit mutantit}
+
+\section{Ratkaisuyrityksiä}
+\subsection{Mutaatioiden generointi}
+\subsection{Ekvivalenttien mutanttien minimointi}
 
 \section{Yhteenveto}
 
