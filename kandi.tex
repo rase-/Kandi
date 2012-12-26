@@ -3,7 +3,7 @@
 \usepackage{subfigure}
 \usepackage{url}
 \usepackage{amsmath}
-\usepackage{textcomp}
+\usepackage{lmodern}
 \begin{document}
 %\doublespacing
 %\singlespacing
@@ -44,7 +44,7 @@ Rivi- ja haarakattavuuden lisäksi on olemassa muita mittoja testikattavuuden mi
 \section{Mutaatiotestaus}
 Mutaatioestaus tapahtuu ohjelmalle suoritettavalla testaussyklillä. Ensin ohjelman testit ajetaan alkuperäiselle lähdekoodille. Jos jokin testi epäonnistuu, pitää se korjata ennen jatkamista.
 
-Seuraavaksi ohjelmakoodista tehdään useita kopioita, joissa joku yksityiskohta, tai joitain yksityiskohtia on muutettu niinsanotuilla mutaatioilla. Näitä kopioita kutsutaan mutanteiksi. Testit jotka on annettu mutaatiosyklin parametreina ajetaan jokaiselle mutantille. Jos jokin testi epäonnistuu mutantin kohdalla, tämä mutantti leimataan tapetuksi, sillä tämä testi tunnisti koodin tehdyn muutoksen. Jos taas mikään testi ei epäonnistu, mutantti leimataan selviytyjäksi, sillä mikään testi ei tunnistanut muutosta. Selvitytyneet mutantit kielivät usein puutteesta testeissä. Jokaisesta mutantista otetaan usein talteen mutaatiokohta, sekä mutaatio. Näin selviytynyeitä mutantteja voidaan tarkastella, ja testejä parannella selviytyneitä mutantteja apuna käyttäen. Ne antavat usein vihjeitä siitä mikä testeissä on puutteellista. Mutaatiokattavuuden mittana käytetään mutaatiopisteitä, joka lasketaan yksinkertaisesti kaavalla $\frac{k}{t}$, missä $k$ tarkoittaa tapettuja mutantteja, ja $t$ tarkoittaa mutanttien kokonaismäärää.
+Seuraavaksi ohjelmakoodista tehdään useita kopioita, joissa joku yksityiskohta, tai joitain yksityiskohtia on muutettu niinsanotuilla mutaatioilla. Näitä kopioita kutsutaan mutanteiksi. Testit jotka on annettu mutaatiosyklin parametreina ajetaan jokaiselle mutantille. Jos jokin testi epäonnistuu mutantin kohdalla, tämä mutantti leimataan tapetuksi, sillä tämä testi tunnisti koodin tehdyn muutoksen. Jos taas mikään testi ei epäonnistu, mutantti leimataan selviytyjäksi, sillä mikään testi ei tunnistanut muutosta. Selvitytyneet mutantit kielivät usein puutteesta testeissä. Jokaisesta mutantista otetaan usein talteen mutaatiokohta, sekä mutaatio. Näin selviytynyeitä mutantteja voidaan tarkastella, ja testejä parannella selviytyneitä mutantteja apuna käyttäen. Ne antavat usein vihjeitä siitä mikä testeissä on puutteellista. Mutaatiokattavuuden mittana käytetään mutaatiopisteitä, joka lasketaan yksinkertaisesti kaavalla $\frac{k}{t}$, missä $k$ tarkoittaa tapettuja mutantteja, ja $t$ tarkoittaa mutanttien kokonaismäärää.
 
 Mutaatiosykliin ollaan ehdoteltu parannuksia. Lupaavia lisäyksiä tutkitaan jatkuvasti, ja tulevaisuuden varalle ollaan ehdotettu seuraavaa pidennystä sykliin: kun selviytyvät mutantit ollaan löydetty generoidaan niiden perusteelta testejä automaattisesti. Toistetaan sitten sykliä alusta lähtien niin kauan kunnes yksikään mutantti ei jää henkiin. Tähän sykliin pääseminen ei ole kuitenkaan vielä mahdollista. Mutaatiotestaukseen liittyvät ongelmat käsitellään myöhemmissä kappaleissa.
 
@@ -63,6 +63,7 @@ Kuten mainittu, mutaatioita on monia eri tyyppejä.
 \subsection{Mutaatiot eri ohjemointiparadigmoissa}
 
 \section{Sovellukset}
+% tähän testien generoinnista
 
 \section{Heikkudet}
 Mutaatiotestaus ei ole täysin ongelmatonta. Ohjelman koon kasvaessa mutaatioiden generointi hidastuu. Suurimmaksi ongelmaksi on kuitenkin havaittu niin sanottujen ekvivalenttien mutanttien tunnistaminen. Ekvivalentit mutantit haittaavat mutaatiokattavuuden oikeellisuutta, ja niiden tunnistaminen pitää pahimmassa tapauksessa tehdä käsin. Niiden määrä saattaa olla niin suuri, että ekvivalenssin toteaminen vie useita työtunteja per mutantti. Nämä ongelmat selvitetään tässä kappaleessa tarkemmin, sekä esitellään joitain ratkaisuyrityksiä näihin ongelmiin.
@@ -83,11 +84,6 @@ Ekvivalenttien mutanttien tunnistaminen automaattisesti on hankalaa. Voidaan jop
 
 \subsection{Kääntäjän hyödyntäminen}
 Eräs tapa löytää ekvivalentteja mutantteja on käyttää hyväksi käännettävien ohjelmointikielten kääntäjää. Kääntäjät suorittavat optimointeja käännettävälle koodille. Kun jokin mutaatio täyttää jonkin optimointisäännön, tai tuottaa käänteisen optimoinnin ohjelmaan, voidaan päättää että mutantti on ekvivalentti. Näin voidaan kuitenkin tunnistaa vain hyvin rajattu osa ekvivalenteista mutanteista. Lisäksi, moni nykyään käytetyistä ohjelmointikielistä on tulkittava, eikä käänettävä. Tämä tuottaa ongelmia tälle ekvivalenssintunnistusmenetelmälle. 
-
-% vois esitellä CBT ja sen sovellus
-
-\subsection{Geneettisen algoritmin soveltaminen}
-
 
 \section{Mutaatiotestaus käytännössä: esimerkkitestikehys}
 
