@@ -65,19 +65,16 @@ Kuten mainittu, mutaatioita on monia eri tyyppejä.
 \section{Heikkudet}
 Mutaatiotestaus ei ole täysin ongelmatonta. Ohjelman koon kasvaessa mutaatioiden generointi hidastuu. Suurimmaksi ongelmaksi on kuitenkin havaittu niin sanottujen ekvivalenttien mutanttien tunnistaminen. Ekvivalentit mutantit haittaavat mutaatiokattavuuden oikeellisuutta, ja niiden tunnistaminen pitää pahimmassa tapauksessa tehdä käsin. Niiden määrä saattaa olla niin suuri, että ekvivalenssin toteaminen vie useita työtunteja per mutantti. Nämä ongelmat selvitetään tässä kappaleessa tarkemmin, sekä esitellään joitain ratkaisuyrityksiä näihin ongelmiin.
 
-\subsection{Aikavaativuus}
+\subsection{Mutanttien generointi}
 \subsection{Ekvivalentit mutantit}
-Ekvivalentit mutantit ovat alkuperäisen ohjelman mutantteja jotka ovat toiminnallisuudeltaan kuitenkin täysin vastaavia alkuperäisen ohjelman kanssa. Niiden läsnäolo johtaa siihen, ettei mutaatiokattavuus ole 100\%, vaikka todellisuudessa testit olisivat niin kattavat. Ekvivalenttien mutanttien tunnistaminen manuaalisesti on rasittavaa ja aikaavievää. Lisäksi, on huomattu, että jos ekvivalenssia ei tutkita tarkkaan, voidaan tehdä virheitä ja leimata joitain tapettavia mutantteja ekvivalenteiksi. % Tähän jotain viiteitä ja oikeita lukuja
+Ekvivalentit mutantit ovat alkuperäisen ohjelman mutantteja jotka ovat toiminnallisuudeltaan kuitenkin täysin vastaavia alkuperäisen ohjelman kanssa. Niiden läsnäolo johtaa siihen, ettei mutaatiokattavuus ole 100\%, vaikka todellisuudessa testit olisivat niin kattavat. Ekvivalenttien mutanttien tunnistaminen manuaalisesti on rasittavaa ja aikaavievää. Formaalisti määriteltynä ekvivalenssi voidaan määritellä siten, että jos alkuperäinen ohjelma ajatellaan funktiona $O$ ja mutantti funktiona $M$, niiden tulosteet ovat samat kaikille syötteille $s$, eli $\forall s(O(s) = M(s))$. Ei siis ole olemassa testiä $T$ joka erottaa mutantin $M$ alkuperäisestä ohjelmasta $O$. Lisäksi, on huomattu, että jos ekvivalenssia ei tutkita tarkkaan, voidaan tehdä virheitä ja leimata joitain tapettavia mutantteja ekvivalenteiksi. % Tähän jotain viiteitä ja oikeita lukuja
 
 Ekvivalenttien mutanttien tunnistaminen automaattisesti on hankalaa. Voidaan jopa osoittaa, että kahden ohjelman ekvivalenssin tarkistaminen on päättelemätön ongelma. Alhaisten asteitten mutantit ovat kuitenkin erikoistapauksia tästä ongelmasta, sillä tällöin mutantti poikkea alkuperäisestä ohjelmasta hyvin pienissä määrin. Voidaankin osoittaa, että useissa tapauksissa ekvivalenssi voidaan päätellä algoritmisesti, ja muissa tapauksissa voidaan käyttää erilaisia tekniikoita ekvivalenssin estimoimiseen. 
 
 \subsection{Kääntäjän hyödyntäminen}
-
 Eräs tapa löytää ekvivalentteja mutantteja on käyttää hyväksi käännettävien ohjelmointikielten kääntäjää. Kääntäjät suorittavat optimointeja käännettävälle koodille. Kun jokin mutaatio täyttää jonkin optimointisäännön, tai tuottaa käänteisen optimoinnin ohjelmaan, voidaan päättää että mutantti on ekvivalentti. Näin voidaan kuitenkin tunnistaa vain hyvin rajattu osa ekvivalenteista mutanteista. Lisäksi, moni nykyään käytetyistä ohjelmointikielistä on tulkittava, eikä käänettävä. Tämä tuottaa ongelmia tälle ekvivalenssintunnistusmenetelmälle. 
-% vois esitellä CBT
 
-\subsection{Mahdollisen polun ongelma}
-Ekvivalenssin tunnistusta voidaan myös lähestyä mahdollisen polun ongelman laajennoksena testeille. Mahdollisen testin ongelma on löytää onko olemassa jokin syöte, joka voi täyttää testin asettamat vaatimukset. Mahdollisen polun ongelma on kuitenkin päättelemätön. Tämän ongelman ratkaisuun on siis käytettävä approksimontialgoritmeja. Offut ja Pan ovat tarkastelleet erilaisia matemaattisia rajoitteita mahdottomien polkujen löytämiseksi. 
+% vois esitellä CBT ja sen sovellus
 
 
 
