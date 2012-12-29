@@ -77,7 +77,9 @@ Kuva~\ref{fig:m1} ja ~\ref{fig:m2} sisältävät eräät ensimmäisen asteen mut
 Kun tarkastellaan kuvan~\ref{fig:m1} mutanttia $m1$, huomataan, että se hyväksyy täsmälleen samat tilasiirtymäsekvenssit kuin alkuperäinen automaatti $O$, eli $L(O) = L(m1)$, sillä hyväksyvästä tilasta $b$ voidaan siirtyä aina ykkössiirtymällä joko itseensä, tai tilaan $a$. Tilasta $a$ päästään aina ykkössiirtymällä tilaan $b$ ja nollasiirtymällä itseensä. Automaatissa $m1$ voidaan tilassa $b$ valita kumpi tahansa siirtymä aakkosen $\sigma = 1$ ilmentymänä. Jos siis saadaan ensin $1$ ja sitten $0$, voidaan olettaa että aakkosella $\sigma = 1$ siirryttiin tilaan $a$. Tilannetta, jolloin $L(0) = L(m1)$ kutsutaan ekvivalenssiksi. Vaikka $O \neq m1$, ovat ne funktionaalisesti samat, eli niiden kielet ovat samat. 
  
 \subsection{Mutaatiot ohjelmointikielissä}
+Mutaatiot on helppo laajentaa äärellisiltä automaateilta ohjelmointikielille. Olkoon $O$ jokin alkuperäinen, jollain ohjelmointikielellä toteutettu ohjelma. Nyt $M$ on joukko mutantteja. Nyt jokainen $m\in M$ on sama ohjelma, johon on tehty jokin tai joitakin syntaktisia muutoksia. Nämä syntaktiset muutokset voivat olla yksinkertaisia operaattorin vaihdoksia, tai jopa metodi tai funktiokutsun muuttamisia toiseksi. Mutaatoiden luonto riippuu usein käyteystä alustasta. On selvää, että täysin samat mutaatiot eivät käy sekä imperatiivisiin olio-ohjelmointikieliin, kun puhtaasti funktionaalisiin ohjelmointikieliin. Esimeriksi Javan mutaatiotestauskehysten mutaatiot eivät ole kovinkaan sopivia Clojuren mutaatiotestauskehyksen mutaatioiksi. 
 
+Mutantit tuotetaan ohjelmointikieliin ns. mutaatio-operaattoreilla. Mutaatio-operaattori on funktio joka tuottaa mutaation annettuun ohjelmaan $O$. Idea mutaatiolle on täysin sama kuin äärellisille automaateille. Voidaan korvata, lisätä tai poistaa asioita ohjelmakoodista. 
 
 \subsection{Tyypilliset mutaatiot}
 Kuten mainittu, mutaatioita on monia eri tyyppejä.
