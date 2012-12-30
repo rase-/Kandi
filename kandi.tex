@@ -79,12 +79,10 @@ Kun tarkastellaan kuvan~\ref{fig:m1} mutanttia $m1$, huomataan, että se hyväks
 \subsection{Mutaatiot ohjelmointikielissä}
 Mutaatiot on helppo laajentaa äärellisiltä automaateilta ohjelmointikielille. Olkoon $O$ jokin alkuperäinen, jollain ohjelmointikielellä toteutettu ohjelma. Nyt $M$ on joukko mutantteja. Nyt jokainen $m\in M$ on sama ohjelma, johon on tehty jokin tai joitakin syntaktisia muutoksia. Mutaatoiden luonto riippuu usein käyteystä alustasta. On selvää, että täysin samat mutaatiot eivät käy sekä imperatiivisiin olio-ohjelmointikieliin, kun puhtaasti funktionaalisiin ohjelmointikieliin. Esimeriksi Javan mutaatiotestauskehysten mutaatiot eivät ole kovinkaan sopivia Clojuren mutaatiotestauskehyksen mutaatioiksi. 
 
-Mutantit tuotetaan ohjelmointikieliin ns. mutaatio-operaattoreilla. Mutaatio-operaattori on funktio joka tuottaa mutaation annettuun ohjelmaan $O$. Idea mutaatiolle on täysin sama kuin äärellisille automaateille. Voidaan korvata, lisätä tai poistaa elementtejä ohjelmakoodista. 
-
-\subsection{Tyypilliset mutaatiot}
-Kuten mainittu, mutaatioita on monia eri tyyppejä.
+Mutantit tuotetaan ohjelmointikieliin ns. mutaatio-operaattoreilla. Mutaatio-operaattori on funktio joka tuottaa mutaation annettuun ohjelmaan $O$. Idea mutaatiolle on täysin sama kuin äärellisille automaateille. Voidaan korvata, lisätä tai poistaa elementtejä ohjelmakoodista. Käytettävät mutaatio-operaattorit ovat imperatiivisissa ohjelmointikielissä pääosin samat. Agrawal ja kumppanit listaavat 76 C-kielen mutaatio-operaattoria. Nämä mutaatio-operaattorit pätevät pääosin siis kaikkiin C-pohjaisiin ohjelmointikieliin, kuten Javaan ja PHP:hen, sekä karkeasti kaikkiin muihin imperatiivisiin ohjelmointikieliin. Ne ovat jaettu seuraaviin ryhmiin: lausemutaatio, operaattorimutaatio, muuttujamutaatio, vakiomutaatio. Lausemutaatioihin luetaan mm. breakin muuttaminen continue lauseeseen, sekä aaltosulkeiden paikanmuuttaminen ja goto lauseen kohteen muuttaminen. Operaattorimutaatioita ovat esimerkiksi aritmeettisten ja loogisten operaattoreiden muuttamiset toisiksi. Muuttujien mutatointia ovat mm. viitteiden vaihtaminen toiseksi. Vakioiden mutatointi viittaa vakioiden arvojen päittäin vaihtamiseen, tai yksittäisen vakion arvon manipulointiin. Jokaisesta näistä mutaatiotyypistä on useita variaatioita, ja joistakin lähteistä vastaavanlaisia mutaatio-operaattoreita löytyy jopa enemmän. Proteumissa, Delamaron ja Maldonadon esittelemässä mutaatiotestikehyksessä C-kielelle, on jopa 108 mutaatio-operaattoria~\cite{}. 
 
 \subsection{Mutaatiot eri ohjemointiparadigmoissa}
+Ohjelmointikielen paradigma voi tuoda mukanaan muutoksia. Esimerkiksi Javassa voidaan kokea tarve sen olio-ohjelmointiominaisuuksiin spesifeille operaattoreille.
 
 \section{Sovellukset}
 % tähän testien generoinnista
