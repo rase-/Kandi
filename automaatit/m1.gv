@@ -10,6 +10,7 @@ digraph finite_state_machine {
 	S -> a;
 	a -> b [label = "1"];
 	a -> a [label = "0"];
+	b -> a [label = "0"];
 	b -> a [label = "1"];
 	b -> b [label = "1"];
 }
