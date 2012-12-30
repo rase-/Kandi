@@ -90,7 +90,7 @@ Olio-ohjelmointispesifeistä mutaatio-operaattoreista jo huomattiin, etä paradi
 Kuten mainittu, mutaatiotestauksen alkuperäinen ja yleinen tarkoitus on mitata kuinka hyvin jotkin annetut testit $T$ havaitsevat virheitä niiden testaamasta ohjelmasta $O$, joka voi koostua useista eri komponenteista, esimerkiksi luokista. Jo vuosia on kuitenin yritetty käyttää mutaatiotestaukseen liittyvää sykliä muuhunkin kuin mutaatiokattavuuden mittaamiseen. Mutaatioestaussykliä ollaan pyritty muuttamaan niin, että mutaatioiden generoinnin yhteydessä saataisiin generoitua myös kattava testijoukko $T$. Tätä ollaan tavoiteltu monilla eri lähestymistavoilla. 
 % täs jotain tapoja ehkä lyhyesti, fokus ei kuitenkaan tutkielmassa ole näissä
 
-\section{Heikkudet}
+\section{Heikkoudet}
 Mutaatiotestaus ei ole täysin ongelmatonta. Ohjelman koon kasvaessa mutaatioiden generointi hidastuu. Suurimmaksi ongelmaksi on kuitenkin havaittu niin sanottujen ekvivalenttien mutanttien tunnistaminen. Ekvivalentit mutantit haittaavat mutaatiokattavuuden oikeellisuutta, ja niiden tunnistaminen pitää pahimmassa tapauksessa tehdä käsin. Niiden määrä saattaa olla niin suuri, että ekvivalenssin toteaminen vie useita työtunteja per mutantti. Nämä ongelmat selvitetään tässä kappaleessa tarkemmin, sekä esitellään joitain ratkaisuyrityksiä niihin.
 
 \subsection{Mutanttien generointi ja käsittely}
