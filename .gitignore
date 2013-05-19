@@ -2,5 +2,7 @@ kandi.pdf
 kandi.toc
 kandi.log
 kandi.aux
+kandi.bbl
+kandi.blg
 texput.log
 .DS_Store
