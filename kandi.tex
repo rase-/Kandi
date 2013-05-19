@@ -51,21 +51,24 @@ Mutaatiosykliin ollaan ehdoteltu parannuksia. On selvää, että parannuksille o
 Mutaatiotestaus perustuu siihen, että ohjelmakoodiin indusoidaan mutaatoita, joita ohjelmalle määriteltyjen testien tulisi huomata. Sana mutaatio tulee perinnöllisyystieteen termistä mutaatio, missä sillä tarkoitetaan muutosta geeniin, jossa yksi geenin kemiallinen komponentti, nulkeotidi, on vaihtunut joksikin toiseksi, on deletoitu sekvenssistä, tai on insertoitu sekvenssiin. Määritellään mutaatioiden konsepti äärellisille automaateille, sekä yleistetään ne sitten yksittäisten ohjelmointikielten tapauksiin.
 
 \begin{figure}[here]
+\centering
 \caption{Äärellinen automaatti $O$ joka hyväksyy minkä tahansa lukuun $1$ päättyvän aakkoston $\Sigma = \{0,1\}$ sekvenssin.}
 \label{fig:nfa}
-\includegraphics{automaatit/nfa.png}
+\includegraphics[scale=0.6]{automaatit/nfa.png}
 \end{figure}
 
 \begin{figure}[here]
+\centering
 \caption{Ensimmäisen asteen mutantti $m1$ automaatista $O$, jossa siirtymä tilasta $b$ tilaan $a$ on lisätty aakkosella $1$}
 \label{fig:m1}
-\includegraphics{automaatit/m1.png}
+\includegraphics[scale=0.6]{automaatit/m1.png}
 \end{figure}
 
 \begin{figure}[here]
+\centering
 \caption{Ensimmäisen asteen mutantti $m2$ automaatista $O$, jossa siirtymä tilasta $a$ tilaan $b$ korvattu tyhjällä siirtymällä}
 \label{fig:m2}
-\includegraphics{automaatit/m2.png}
+\includegraphics[scale=0.6]{automaatit/m2.png}
 \end{figure}
 
 \subsection{Mutaatiot äärellisillä automaateilla}
@@ -86,7 +89,7 @@ Ohjelmointikielen paradigma voi tuoda mukanaan muutoksia. Esimerkiksi Javassa, s
 Olio-ohjelmointispesifeistä mutaatio-operaattoreista voidaan jo huomata, että paradiman vaihtuessa myös mutaatiotaktiikkaa voi joutua muuttamaan. Tämä ei päde ainoastaan olio-ohjelmointiparadigmaan. Mutatoitaessa jotain puhtaasti funktionaalista ohjelmointikieltä, kuten Clojurea voidaan joko mutatoida lähdekoodia, tai mutatoida käännöksen tuottamaa Javan tavukoodia. Tavukoodia mutatoitaessa voidaan käyttää jokseenkin vastaavanlaisia tekniikoita kuin Javalle tarkoitetuilla tavuukodia mutatoivilla mutaatioestauskehyksillä. Toisaalta voidaan myös mutatoida itse lähdekoodia, jolloin joudutaan keksimään uusia mutaatioita, koska Clojuressa ei esimeriksi ole varsinaiseti operaattoreita, vaan ainoastaan funktioita. Funktioita tulisi siis korvata toisilla funktioilla, mutta funktioiden suuri määrä tuotta ongelmia. Lisäksi Clojure on dynaamisesti tyypitetty kieli, joten sopivien korvaavien funktioiden löytäminenkin tuottaa vaikeuksia. Clojuresta voidaan myös käyttää Javan luokkia, joten voidaan kokea tarve käyttää myös olio-ohjelmointiparadigmaan liittyviä mutaatio-operaattoreita. Tutkielmassa keskitytään imperatiivisiin ohjelmointikieliin, erityisesti olio-ohjelmointikieliin kuten Java.
 
 \section{Sovellukset}
-Kuten mainittu, mutaatiotestauksen alkuperäinen ja yleinen tarkoitus on mitata kuinka hyvin jotkin annetut testit $T$ havaitsevat virheitä niiden testaamasta ohjelmasta $O$, joka voi koostua useista eri komponenteista, esimerkiksi luokista, sekä antaa vihjeitä siitä miten testejä tulisi parantaa. Kuten tutkielmassa tuotiin aiemmin esille, tämä vaihe ollaan pyrittä automatisoimaan generoimalla testit syklin suoritus kerrallaan niin, että ne tappavat kaikki mutantit.
+Mutaatiotestauksen alkuperäinen ja yleinen tarkoitus on mitata kuinka hyvin jotkin annetut testit $T$ havaitsevat virheitä niiden testaamasta ohjelmasta $O$, joka voi koostua useista eri komponenteista, esimerkiksi luokista, sekä antaa vihjeitä siitä miten testejä tulisi parantaa. Kuten tutkielmassa tuotiin aiemmin esille, tämä vaihe ollaan pyrittä automatisoimaan generoimalla testit syklin suoritus kerrallaan niin, että ne tappavat kaikki mutantit.
 % täs jotain tapoja ehkä lyhyesti, fokus ei kuitenkaan tutkielmassa ole näissä
 
 \section{Mutanttien generointi ja käsittely}
@@ -167,7 +170,7 @@ Nämä optimoinnit kytkettyinä tehostavat PITin suorituskykyä ja skaalautuvuut
 
 \section{Testaus käytännössä: Cobertura}
 Cobertura on yksi käytetyimmistä testauskattavuustyökaluista Java-ympäristöön. Se tarjoaa samantapaisen HTML muotoisen testikattavuusraportin kuin PIT. Tämä raportti kuitenkin sisältää vain raportin rivi- sekä haarakattavuudesta. Cobertura näyttää rivikattavuuden ja haarakattavuuden vierekkäisinä värityksinä jokaisella rivillä. Jos jollain rivillä on punaista, jomman kumman kattavuusmetriikan mukaan testeissä on puutteita. Kuitenkin kuten aiemmin todettiin, nämä kattavuusmetriikat eivät kuvaa testien kattavuutta kovinkaan hyvin. Raportista on kuitenkin helppo huomata jos kokonaisia osia koodista on jäänyt testeissä huomiotta, sekä mitkä nämä osat ovat. 
-% Tää pitäs kyl siirtää
+% Tää pitäs kyl siirtää, ja onks tää ees järkevä?
 
 \section{Yhteenveto}
 
