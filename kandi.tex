@@ -15,7 +15,7 @@
 %\singlespacing
 %\onehalfspacing
 
-\title{Mutaatiotestaus -- working title}
+\title{Testauskattavuuden arviointi mutaatiomenetelmillä}
 \author{Tony Kovanen}
 \date{\today}
 \abstract{Mutaatiotestaus on testausmenetelmä, jossa ohjelmalle kirjoitettuja testejä paranneellaan kerta toisensa jälkeen. Testien virheenhavaitsemiskykyä koetellaan ohjelmakoodiin tehtävillä muutoksilla, jotka simuloivat mahdollisia bugeja. Jos testit eivät havaitse jotain muutosta, sitä tarkastelemalla voidaan saada vihjeitä testien kattavuuden parantamiseksi. Mutaatiot generoidaan ns. mutaatio-operaattoreilla, jotka ovat yksittäisiä syntaktisia muutoksia generoivia funktioita. Mahdollisten mutaatio-operaattoreiden ja suuren testijoukon vuoksi analyysi käy ohjelman koon kasvaessa nopeasti liian hitaaksi. Optimointeja tarvitaan sekä mutaatiotestikehyksen toteutuksessa sekä mutaatio-operaattoreiden ja/tai mutanttien vähentämiseksi. Ongelmia tuottavat lisäksi ns. ekvivalentit mutantit, jotka saavat saman lopputuleman alkuperäisen ohjelman kanssa jokaisella mahdollisella syötteellä. Ne ovat riesana ohjelmoijille, jotka tarkastelevat mutantteja, joita yksikään testi ei havainnut. Tutkielmassa esitellään mutaatiotestaus, sekä joitain ratkaisuyritelmiä suoritusongelmaan sekä ekvivalenttien mutanttien minimoimiseksi. Tutkielman lopussa esitellään suosittu mutaatiotestauskehys PIT, joka toimii mutaatiotestauksen käytännön esimerkkinä.}
@@ -38,8 +38,6 @@ Ohjelmistoja tuotettaessa on tärkeää varmistaa ohjelmiston eri komponenttien 
 Yksittäisten komponenttien automatisoitu testaaminen voidaan tehdä yksikkötesteillä. Niillä voidaan varmistaa olio-ohjelmointikielissä yksittäisten luokkien ja niiden metodien toimivuus. Vastaavia testejä voidaan kirjoittaa myös esimerkiksi funktionaalisilla ohjelmointikielillä, joissa yksikkötestit testaavat yksittäisten funktioiden ja moduulien (jos ne sisältyvät ohjelmointikieleen) toiminnallisuutta. Yksikkötestit antavat välitöntä palautetta siitä, toimiiko muutoksen kohteena oleva komponentti edelleen olennaisesti samalla tavalla kuin aiemmin. Yksikkötesteillä tulee usein testattua myös jossain määrin komponenttien yhteistoimintaa, sillä oliot usein kapseloivat sisäänsä toisia olioita, jolloin testattavan olion toimivuus riippuu sen kapseloimien olioiden toimivuudesta. 
 
 Integraatiotesteillä testataan komponenttien toimivuus yhdessä tarkemmin ja kattavemmin. Tämä tapahtuu usein simuloimalla kokonaisia ohjelmiston toimintoja. Järjestelmätestit ovat käyttäjätason testejä, joilla ohjelmistolle suoritetaan kokonainen käyttäjän toiminto, jonka tulos evaluoidaan. 
-
-%Tässä tutkielmassa keskitytään yksikkötestien kattavuuden mittaamiseen. Kattavuutta voidaan mitata yleistämällä erilaisia kattavuusmittoja helposti myös esimerkiksi integraatiotesteille. 
 
 Niin yksikkö- kuin integraatiotestien yhteydessä puhutaan usein testauskattavuudesta. Ideaalisesti se, että jotkin testit kattavat ohjelman, tarkoittaa sitä, että virheellinen ohjelma huomataan yhden tai useamman testin epäonnistuessa. Kattavuuden mittana tunnetuimmat ja yleisimmät ovat rivikattavuus ja haarautumakattavuus. Näitä kattavuusmetriikoita tarjoavat useimmat testauskattavuustyökalut. Kuten huomaamme pian, nämä kattavuusmetriikat eivät ole täysin ideaalisen määritelmän mukaisia.
 
